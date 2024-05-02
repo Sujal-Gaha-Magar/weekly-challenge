@@ -7,11 +7,11 @@ function App() {
 
   return (
     <div
-      className="flex justify-center w-screen px-8 py-20 md:h-[200vh] md:justify-center lg:h-screen lg:w-screen"
+      className="flex justify-center w-screen px-8 py-10 md:h-[200vh] md:justify-center lg:h-screen lg:w-screen"
       style={{ backgroundColor: backgroundColour }}
     >
-      <div className="flex flex-col items-center justify-center gap-4 w-screen md:gap-8 lg:gap-12">
-        <div className="flex flex-col items-center gap-1 md:gap-3 lg:gap-4">
+      <div className="flex flex-col items-center justify-center w-screen lg:gap-12">
+        <div className="flex flex-col items-center pb-5 md:gap-3 lg:gap-4">
           <p className=" font-extrabold text-red-400 text-sm md:text-green-400 md:text-3xl lg:text-4xl lg:text-white">
             Turn collaboration into innovation
           </p>
@@ -23,12 +23,15 @@ function App() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-between items-center gap-4 md:items-center md:gap-8 lg:w-[1024px] lg:flex-row lg:justify-center lg:gap-12 text-white ">
+        <div className="flex flex-col justify-between items-center md:items-center md:gap-8 lg:w-[1024px] lg:flex-row lg:justify-center lg:gap-12 text-white ">
           {content.map((data) => {
             return (
-              <div className="flex flex-col w-[90%] lg:gap-[10px] lg:h-full lg:w-[309px]">
+              <div
+                key={data.id}
+                className="flex flex-col w-[90%] gap-1 md:gap-2 md:w-[95%] lg:gap-[10px] lg:h-full lg:w-[309px]"
+              >
                 <img
-                  className="h-[80%] md:h-96"
+                  className="h-[75%] md:h-[400px]"
                   src={data.picture}
                   alt=""
                 />
@@ -42,7 +45,7 @@ function App() {
             );
           })}
         </div>
-        <div className="flex flex-wrap-reverse w-[160px] gap-2 md:justify-center md:flex-wrap lg:gap-[27px] lg:justify-between lg:w-[373px] lg:h-[34px] lg:flex-nowrap">
+        <div className="flex flex-wrap-reverse w-[160px] gap-2 md:justify-center md:flex-wrap md:mt-4 lg:gap-[27px] lg:justify-between lg:w-[373px] lg:h-[34px] lg:flex-nowrap">
           <button
             className="w-[76px] h-[34px] rounded-lg border px-[2px] py-[3px] text-white flex justify-evenly items-center"
             onClick={() => {
